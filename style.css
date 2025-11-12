@@ -24,3 +24,7 @@ body
 {
     width: 60vw;
 }
+.image
+{
+    align-items: center;
+}
