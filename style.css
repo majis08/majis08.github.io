@@ -1,40 +1,178 @@
-h1,h4
+/*
+----------------------Front----------------------
+*/
+
+/*momo trust poice d'écriture*/
+.momo-trust-display-regular {
+  font-family: "Momo Trust Display", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/*silla slab police d'écriture*/
+.zilla-slab-light {
+  font-family: "Zilla Slab", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.zilla-slab-regular {
+  font-family: "Zilla Slab", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.zilla-slab-medium {
+  font-family: "Zilla Slab", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.zilla-slab-semibold {
+  font-family: "Zilla Slab", serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.zilla-slab-bold {
+  font-family: "Zilla Slab", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.zilla-slab-light-italic {
+  font-family: "Zilla Slab", serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.zilla-slab-regular-italic {
+  font-family: "Zilla Slab", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.zilla-slab-medium-italic {
+  font-family: "Zilla Slab", serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.zilla-slab-semibold-italic {
+  font-family: "Zilla Slab", serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.zilla-slab-bold-italic {
+  font-family: "Zilla Slab", serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+/*écriture titres*/
+h1,h4,h5
 {
     text-align: center;
     color: hotpink;
+    font-family: "Momo Trust Display";
 }
+
+/*
+----------------------Base----------------------
+*/
+
+/*background 1st layer*/
 body
 {
     background-color: #000000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
+    height: 100%;
 }
+
+/*backgrond 2nd layer*/
 .Home
 {
-    background-color: #94e647;
-    width: 80vw;
-    height: 80vh;
-    margin-top: 75px;
-    z-index: 2;
-    position: relative;
-    border-radius: 40px;
+
 }
+
+/*
+----------------------Title----------------------
+*/
+
+/*section du titre*/
 .title
+{
+    background-color: #000000;
+    width: 80%;
+    height: 20%;
+    margin-top: 50px;
+    margin-left: 10%;
+    margin-right: 10%;
+    display: flex;
+    position: top;
+    border-radius: 40px;
+    border : 2px solid #99CF59;
+}
+
+/*effet bouton titre*/
+.title:hover
+{
+    background-color: #19050E;
+    padding: 1px;
+    transition: all 0.6 ease;
+    box-shadow: 0 0 20px hotpink;
+}
+
+/*texte du titre*/
+.title-text
 {
     display: flex;
     flex-direction: column;
     align-items: center;
-
-}
-.title-text
-{
-    text-align: center;
 }
 
-.image img
+/*
+----------------------About Me----------------------
+*/
+
+/*Section About Me*/
+.about-me
 {
-    width: 300px;
-    height: auto;
-    margin-top: 5px;
+    background-color: #000000;
+    width: 90%;
+    height: 50%; 
+    margin: 30px auto;
+    border-radius: 40px;
+    border : 2px solid #99CF59;
 }
+
+/*texte about me*/
+.about-me-text
+{
+
+}
+
+/*image about me*/
+.about-me-img
+{
+
+}
+
+/*
+----------------------Skills----------------------
+*/
+
+
+
+
+/*
+----------------------Pro EXP----------------------
+*/
+
+
+
+
+/*
+----------------------Projects----------------------
+*/
