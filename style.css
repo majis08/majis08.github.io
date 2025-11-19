@@ -1,178 +1,527 @@
 /*
+----------------------Variables----------------------
+*/
+
+/* definition des couleurs */
+:root
+{
+    /* Theme CLAIR par defaut */
+    --bg-color: #f4f6f8;
+    --container-bg: #ffffff;
+    --text-main: #4a4a4a;
+    --title-color: #2c3e50;
+    --accent-color: #0056b3;
+    --accent-secondary: #007bff;
+    --border-color: #e1e4e8;
+    --shadow-color: rgba(0,0,0,0.05);
+    
+    /* Couleurs specifiques cartes */
+    --card-bg: #f8f9fa;
+    --card-border-left: #ccc;
+}
+
+/* mode sombre couleurs */
+.dark-mode
+{
+    --bg-color: #121212;
+    --container-bg: #1e1e1e;
+    --text-main: #e0e0e0;
+    --title-color: #ffffff;
+    --accent-color: #66b2ff;
+    --accent-secondary: #3399ff;
+    --border-color: #333333;
+    --shadow-color: rgba(0,0,0,0.5);
+    
+    --card-bg: #2d2d2d;
+    --card-border-left: #555;
+}
+
+/*
 ----------------------Front----------------------
 */
 
-/*momo trust poice d'écriture*/
-.momo-trust-display-regular {
-  font-family: "Momo Trust Display", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-/*silla slab police d'écriture*/
-.zilla-slab-light {
-  font-family: "Zilla Slab", serif;
-  font-weight: 300;
-  font-style: normal;
-}
-
-.zilla-slab-regular {
-  font-family: "Zilla Slab", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.zilla-slab-medium {
-  font-family: "Zilla Slab", serif;
-  font-weight: 500;
-  font-style: normal;
-}
-
-.zilla-slab-semibold {
-  font-family: "Zilla Slab", serif;
-  font-weight: 600;
-  font-style: normal;
-}
-
-.zilla-slab-bold {
-  font-family: "Zilla Slab", serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.zilla-slab-light-italic {
-  font-family: "Zilla Slab", serif;
-  font-weight: 300;
-  font-style: italic;
-}
-
-.zilla-slab-regular-italic {
-  font-family: "Zilla Slab", serif;
-  font-weight: 400;
-  font-style: italic;
-}
-
-.zilla-slab-medium-italic {
-  font-family: "Zilla Slab", serif;
-  font-weight: 500;
-  font-style: italic;
-}
-
-.zilla-slab-semibold-italic {
-  font-family: "Zilla Slab", serif;
-  font-weight: 600;
-  font-style: italic;
-}
-
-.zilla-slab-bold-italic {
-  font-family: "Zilla Slab", serif;
-  font-weight: 700;
-  font-style: italic;
-}
-
-/*écriture titres*/
-h1,h4,h5
+/* reglage global */
+*
 {
-    text-align: center;
-    color: hotpink;
-    font-family: "Momo Trust Display";
+    box-sizing: border-box;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+/* polices d'ecriture */
+.momo-trust-display-regular { font-family: "Momo Trust Display", sans-serif; font-weight: 400; }
+.zilla-slab-light { font-family: "Zilla Slab", serif; font-weight: 300; }
+.zilla-slab-regular { font-family: "Zilla Slab", serif; font-weight: 400; }
+
+/* style des titres */
+h1, h4, h5
+{
+    color: var(--title-color); 
+    font-family: "Momo Trust Display", sans-serif;
+    margin: 10px 0;
+}
+
+/* style du texte courant */
+div, p, span, a
+{
+    color: var(--text-main);
+    text-decoration: none;
 }
 
 /*
 ----------------------Base----------------------
 */
 
-/*background 1st layer*/
+/* corps de la page */
 body
 {
-    background-color: #000000;
+    background-color: var(--bg-color);
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding-bottom: 50px;
+    font-family: "Zilla Slab", serif;
 }
 
-/*backgrond 2nd layer*/
+/* conteneur principal */
 .Home
 {
+    width: 100%; 
+}
 
+/* bouton mode sombre */
+.theme-toggle-btn
+{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: var(--container-bg);
+    border: 1px solid var(--border-color);
+    color: var(--title-color);
+    padding: 10px 15px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 6px var(--shadow-color);
+    z-index: 1000;
+}
+
+/* survol bouton theme */
+.theme-toggle-btn:hover
+{
+    transform: scale(1.1);
+    border-color: var(--accent-color);
 }
 
 /*
 ----------------------Title----------------------
 */
 
-/*section du titre*/
+/* bloc du titre */
 .title
 {
-    background-color: #000000;
+    background-color: var(--container-bg);
     width: 80%;
-    height: 20%;
-    margin-top: 50px;
-    margin-left: 10%;
-    margin-right: 10%;
+    height: 150px;
+    margin: 50px auto 30px auto;
     display: flex;
-    position: top;
-    border-radius: 40px;
-    border : 2px solid #99CF59;
+    justify-content: center; 
+    align-items: center;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 6px var(--shadow-color);
 }
 
-/*effet bouton titre*/
+/* survol du titre */
 .title:hover
 {
-    background-color: #19050E;
-    padding: 1px;
-    transition: all 0.6 ease;
-    box-shadow: 0 0 20px hotpink;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    border-color: var(--accent-color);
 }
 
-/*texte du titre*/
-.title-text
+/* texte du titre principal */
+.title-text h1
 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin: 0;
+    font-size: 1.7rem;
+    text-align: center;
+    color: var(--accent-color);
 }
 
 /*
 ----------------------About Me----------------------
 */
 
-/*Section About Me*/
+/* section a propos */
 .about-me
 {
-    background-color: #000000;
-    width: 90%;
-    height: 50%; 
+    background-color: var(--container-bg);
+    width: 80%;
     margin: 30px auto;
-    border-radius: 40px;
-    border : 2px solid #99CF59;
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 6px var(--shadow-color);
 }
 
-/*texte about me*/
+/* survol a propos */
+.about-me:hover
+{
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    border-color: var(--accent-color);
+}
+
+/* conteneur texte description */
 .about-me-text
 {
-
+    flex: 2;
+    padding: 0 30px;
 }
 
-/*image about me*/
+/* style du texte description */
+.about-me-text h5
+{
+    font-family: "Zilla Slab", serif;
+    font-weight: 400; 
+    color: var(--text-main);
+    border-left: 4px solid var(--accent-color);
+    padding: 10px 20px;
+    background-color: var(--bg-color);
+    border-radius: 0 10px 10px 0;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* conteneur image profil */
 .about-me-img
 {
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* Empile le nom et l'image verticalement */
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* Espace entre le nom et la photo */
+}
 
+/* style du nom au dessus photo */
+.profile-name
+{
+    font-family: "Momo Trust Display", sans-serif;
+    color: var(--accent-color);
+    font-size: 1.5rem; /* Taille réduite ici */
+    margin: 0;
+    text-align: center;
+}
+
+/* photo de profil */
+.profile-pic
+{
+    width: 200px;
+    height: 250px;
+    border-radius: 20px;
+    object-fit: cover;
+    border: 4px solid var(--container-bg);
+    box-shadow: 0 10px 25px var(--shadow-color);
+    transition: all 0.4s ease;
+}
+
+/* survol photo profil */
+.profile-pic:hover
+{
+    transform: scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 86, 179, 0.2);
 }
 
 /*
-----------------------Skills----------------------
+----------------------Sections Global----------------------
 */
 
+/* style global sections */
+.skills, .pro-exp, .projects, .contact
+{
+    background-color: var(--container-bg);
+    width: 80%;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 6px var(--shadow-color);
+    text-align: center;
+}
 
-
+/* zone de scroll interne */
+.scroll-container
+{
+    max-height: 250px;
+    overflow-y: auto;
+    padding: 15px;
+    margin-top: 15px;
+    border-top: 1px solid var(--border-color);
+}
 
 /*
-----------------------Pro EXP----------------------
+----------------------SKILLS----------------------
 */
 
+/* survol bloc skills */
+.skills:hover
+{
+    border-color: var(--accent-secondary);
+}
 
+/* grille des badges */
+.skills .scroll-container
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
 
+/* style individuel badge */
+.skills .card
+{
+    background-color: var(--bg-color);
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    border-radius: 50px;
+    padding: 8px 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    width: auto;
+    box-shadow: none;
+    cursor: default;
+    transition: 0.3s;
+}
+
+/* survol badge */
+.skills .card:hover
+{
+    background-color: var(--accent-color);
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 86, 179, 0.3);
+}
 
 /*
-----------------------Projects----------------------
+----------------------PRO EXP----------------------
 */
+
+/* survol bloc experience */
+.pro-exp:hover
+{
+    border-color: var(--accent-color);
+}
+
+/* style carte experience */
+.pro-exp .card
+{
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-left: 5px solid var(--accent-color);
+    border-radius: 4px;
+    padding: 15px 20px;
+    margin-bottom: 12px;
+    text-align: left;
+    transition: 0.3s;
+}
+
+/* titre poste experience */
+.pro-exp .card h4
+{
+    margin-top: 0;
+    font-size: 1.1rem;
+    color: var(--title-color);
+}
+
+/* survol carte experience */
+.pro-exp .card:hover
+{
+    background-color: var(--container-bg);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transform: translateX(5px);
+}
+
+/*
+----------------------PROJECTS----------------------
+*/
+
+/* survol bloc projets */
+.projects:hover
+{
+    border-color: var(--accent-color);
+}
+
+/* style carte projet */
+.projects .card
+{
+    background-color: var(--card-bg);
+    border: 1px dashed var(--text-main);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 15px;
+    text-align: left;
+    position: relative;
+    transition: 0.3s;
+}
+
+/* titre du projet */
+.projects .card h4
+{
+    color: var(--accent-color);
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    transition: 0.3s;
+}
+
+/* survol carte projet */
+.projects .card:hover
+{
+    background-color: var(--container-bg);
+    border-style: solid;
+    border-color: var(--accent-color);
+    transform: scale(1.01);
+}
+
+/* survol titre projet */
+.projects .card:hover h4
+{
+    text-decoration-color: var(--accent-color);
+}
+
+/*
+----------------------Contacts----------------------
+*/
+
+/* survol bloc contact */
+.contact:hover
+{
+    border-color: var(--accent-color);
+}
+
+/* texte du bloc contact */
+.contact-text
+{
+    font-family: "Zilla Slab", serif;
+    font-weight: 400;
+    color: var(--text-main);
+}
+
+/* conteneur des icones */
+.contact-container
+{
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+/* lien individuel */
+.contact-item
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    gap: 10px;
+    transition: 0.3s;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* texte sous icone */
+.contact-item span
+{
+    font-family: "Zilla Slab", serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-main);
+    transition: 0.3s;
+}
+
+/* style svg icone */
+.contact-icon
+{
+    width: 40px;
+    height: 40px;
+    fill: var(--icon-color);
+    transition: 0.3s;
+}
+
+/* survol lien global */
+.contact-item:hover
+{
+    background-color: var(--bg-color);
+    transform: translateY(-3px);
+}
+
+/* survol svg couleur */
+.contact-item:hover .contact-icon
+{
+    fill: var(--accent-color);
+    filter: drop-shadow(0 4px 4px rgba(0, 86, 179, 0.3));
+}
+
+/* survol texte couleur */
+.contact-item:hover span
+{
+    color: var(--accent-color);
+}
+
+/*
+----------------------Scrollbar----------------------
+*/
+
+/* largeur barre */
+::-webkit-scrollbar
+{
+    width: 8px;
+}
+
+/* fond du rail */
+::-webkit-scrollbar-track
+{
+    background: var(--bg-color);
+    border-radius: 4px;
+}
+
+/* poignee defilement */
+::-webkit-scrollbar-thumb
+{
+    background: #ccc;
+    border-radius: 4px;
+}
+
+/* survol poignee */
+::-webkit-scrollbar-thumb:hover
+{
+    background: var(--accent-color);
+}
+
+/*
+----------------------Footer----------------------
+*/
+
+/* pied de page */
+footer
+{
+    text-align: center;
+    padding: 30px;
+    margin-top: 50px;
+    border-top: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+}
+
+/* texte pied de page */
+footer p
+{
+    font-family: "Zilla Slab", serif;
+    font-size: 0.85rem;
+    color: var(--text-main);
+    opacity: 0.7;
+}
